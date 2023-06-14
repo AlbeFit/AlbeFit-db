@@ -44,7 +44,7 @@ DROP TABLE IF EXISTS `AlbeFit`.`Receta` ;
 CREATE TABLE IF NOT EXISTS `AlbeFit`.`Receta` (
   `idreceta` INT NOT NULL AUTO_INCREMENT,
   `usuario` INT NOT NULL,
-  `titulo` VARCHAR(45) NOT NULL,
+  `titulo` VARCHAR(200) NOT NULL,
   `descripcion` VARCHAR(2000) NOT NULL,
   `tiempo` INT NOT NULL,
   `porciones` INT NOT NULL,
@@ -52,6 +52,7 @@ CREATE TABLE IF NOT EXISTS `AlbeFit`.`Receta` (
   `fechacreacion` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `valoracion_media` INT NULL,
   `imagen` VARCHAR(49) NULL,
+  `ingredientes` VARCHAR(2000) NOT NULL,
   PRIMARY KEY (`idreceta`),
   INDEX `fk_Receta_Usuario_idx` (`usuario` ASC) VISIBLE,
   CONSTRAINT `fk_Receta_Usuario`
